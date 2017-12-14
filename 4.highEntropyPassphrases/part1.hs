@@ -1,6 +1,5 @@
 import Data.Char
 import Data.List.Extra
-import Data.Maybe
 
 main :: IO ()
 main = do
