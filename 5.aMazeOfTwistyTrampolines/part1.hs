@@ -12,11 +12,7 @@ main = do
 stepsUntilOutOfBounds :: State -> Int
 stepsUntilOutOfBounds initialState@(jumps, _) = position
   where mazeLength = Data.Sequence.length jumps
-        position = Prelude.length $ takeWhile (< mazeLength) [positionAfterSteps x initialState | x <- [1 ..]]
-
-positionAfterSteps :: Int -> State -> Int
-positionAfterSteps iterations state = position
-  where (_, position) = last $ take iterations $ iterate step state
+        position = Prelude.length $ takeWhile ((< mazeLength) . snd) $ iterate step initialState
 
 step :: State -> State
 step (jumps, position) = (newJumps, newPosition)
