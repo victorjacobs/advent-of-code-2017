@@ -1,6 +1,6 @@
 import Data.Char
-import Data.List.Extra hiding (take)
-import Data.Sequence hiding (take)
+import Data.List.Extra
+import Data.Sequence
 
 type State = (Seq Int, Int)
 
